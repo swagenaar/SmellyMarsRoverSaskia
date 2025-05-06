@@ -1,9 +1,15 @@
 export type Direction = 'N' | 'E' | 'S' | 'W';
 
 export class RoverState {
-    x = 0;
-    y = 0;
-    direction: Direction = 'N';
+    constructor(
+        public x = 0,
+        public y = 0,
+        public direction: Direction = 'N',
+    ) {
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
+    }
 
     public moveForward() {
         if (this.direction === 'E') {
