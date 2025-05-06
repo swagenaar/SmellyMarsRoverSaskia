@@ -59,4 +59,8 @@ export class RoverState {
                 break;
         }
     }
+
+    public get position() {
+        return `${this.x} ${this.y} ${this.direction}`;
+    }
 }

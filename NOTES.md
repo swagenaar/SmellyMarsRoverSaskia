@@ -13,6 +13,6 @@
     [X] Fix long method
     [X] Deal with cyclomatic complexity
 
-[] Reorder responsibilities
-    [] Fix feature envy
-    [] Fix data class
+[X] Reorder responsibilities
+    [X] Fix feature envy
+    [X] Fix data class

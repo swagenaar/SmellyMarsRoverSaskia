@@ -27,6 +27,6 @@ export class Rover {
     }
 
     public getPosition(): string {
-        return `${this.roverState.x} ${this.roverState.y} ${this.roverState.direction}`;
+        return this.roverState.position;
     }
 }

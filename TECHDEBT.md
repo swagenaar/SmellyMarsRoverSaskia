@@ -9,9 +9,9 @@
     [X] Remove dead code
 [X] Reduce complexity
     [X] Fix long method
-[] Reorder responsibilities
-    [] Fix feature envy 
-    [] Fix data class
+[X] Reorder responsibilities
+    [X] Fix feature envy 
+    [X] Fix data class
 [] Refine abstractions
     [] Fix primitive obsession
 [] Refactor to Design patterns    
