@@ -4,11 +4,11 @@ export class Rover {
     private roverState: RoverState = new RoverState();
 
     constructor(initialState = '') {
-        const s = initialState.split(' ');
-        if (s.length >= 3) {
-            this.roverState.xx = parseInt(s[0], 10);
-            this.roverState.yy = parseInt(s[1], 10);
-            this.roverState.dd = s[2][0];
+        const splitInitialState = initialState.split(' ');
+        if (splitInitialState.length >= 3) {
+            this.roverState.xx = parseInt(splitInitialState[0], 10);
+            this.roverState.yy = parseInt(splitInitialState[1], 10);
+            this.roverState.dd = splitInitialState[2][0];
         }
     }
 
