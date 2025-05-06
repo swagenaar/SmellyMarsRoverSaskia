@@ -4,11 +4,14 @@ export class Rover {
     private roverState: RoverState = new RoverState();
 
     constructor(initialState = '') {
+        const defaultPosition = '0';
+        const defaultDirection = 'N';
+
         const splitInitialState = initialState.split(' ');
         if (splitInitialState.length >= 3) {
-            const xPosition = splitInitialState[0];
-            const yPosition = splitInitialState[1];
-            const direction = splitInitialState[2];
+            const xPosition = splitInitialState[0] ?? defaultPosition;
+            const yPosition = splitInitialState[1] ?? defaultPosition;
+            const direction = splitInitialState[2] ?? defaultDirection;
 
             this.roverState.xx = parseInt(xPosition, 10);
             this.roverState.yy = parseInt(yPosition, 10);
