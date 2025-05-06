@@ -60,11 +60,7 @@ export class Rover {
         }
     }
 
-    public get XYD(): string {
+    public getPosition(): string {
         return `${this.roverState.x} ${this.roverState.y} ${this.roverState.direction}`;
-    }
-
-    public pos(): string {
-        return this.XYD;
     }
 }
