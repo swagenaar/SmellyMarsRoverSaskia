@@ -19,10 +19,9 @@ export class Rover {
         }
     }
 
-    public go(command: string): void {
-        for (let i = 0; i < command.length; i++) {
-            const c = command[i];
-            if (c === 'L') {
+    public go(commands: string): void {
+        for (const command of commands) {
+            if (command === 'L') {
                 if (this.roverState.direction === 'E') {
                     this.roverState.direction = 'N';
                 } else if (this.roverState.direction === 'N') {
@@ -32,7 +31,7 @@ export class Rover {
                 } else if (this.roverState.direction === 'S') {
                     this.roverState.direction = 'E';
                 }
-            } else if (c === 'R') {
+            } else if (command === 'R') {
                 if (this.roverState.direction === 'E') {
                     this.roverState.direction = 'S';
                 } else if (this.roverState.direction === 'S') {
@@ -42,7 +41,7 @@ export class Rover {
                 } else if (this.roverState.direction === 'N') {
                     this.roverState.direction = 'E';
                 }
-            } else if (c === 'M') {
+            } else if (command === 'M') {
                 if (this.roverState.direction === 'E') {
                     this.roverState.x++;
                 }
