@@ -16,12 +16,16 @@ export class Rover {
 
     public go(commands: command[]): void {
         for (const command of commands) {
-            if (command === 'L') {
-                this.roverState.turnLeft();
-            } else if (command === 'R') {
-                this.roverState.turnRight();
-            } else if (command === 'M') {
-                this.roverState.moveForward();
+            switch (command) {
+                case 'L':
+                    this.roverState.turnLeft();
+                    break;
+                case 'R':
+                    this.roverState.turnRight();
+                    break;
+                case 'M':
+                    this.roverState.moveForward();
+                    break;
             }
         }
     }
