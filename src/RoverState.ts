@@ -8,61 +8,18 @@ export abstract class RoverState {
     protected direction: Direction = 'N';
     protected context: Rover;
 
-    constructor(x = '0', y = '0', direction: Direction = 'N', context: Rover) {
+    protected constructor(x = '0', y = '0', direction: Direction = 'N', context: Rover) {
         this.x = parseInt(x, 10);
         this.y = parseInt(y, 10);
         this.direction = direction;
         this.context = context;
     }
 
-    public moveForward() {
-        if (this.direction === 'E') {
-            this.x++;
-        }
-        if (this.direction === 'S') {
-            this.y--;
-        }
-        if (this.direction === 'W') {
-            this.x--;
-        }
-        if (this.direction === 'N') {
-            this.y++;
-        }
-    }
+    public abstract moveForward(): void;
 
-    public turnRight() {
-        switch (this.direction) {
-            case 'E':
-                this.direction = 'S';
-                break;
-            case 'S':
-                this.direction = 'W';
-                break;
-            case 'W':
-                this.direction = 'N';
-                break;
-            case 'N':
-                this.direction = 'E';
-                break;
-        }
-    }
+    public abstract turnRight(): void;
 
-    public turnLeft() {
-        switch (this.direction) {
-            case 'E':
-                this.direction = 'N';
-                break;
-            case 'N':
-                this.direction = 'W';
-                break;
-            case 'W':
-                this.direction = 'S';
-                break;
-            case 'S':
-                this.direction = 'E';
-                break;
-        }
-    }
+    public abstract turnLeft(): void;
 
     public get position() {
         return `${this.x} ${this.y} ${this.direction}`;
