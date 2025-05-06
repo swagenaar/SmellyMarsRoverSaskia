@@ -1,5 +1,5 @@
 import { createRoverState, Direction, RoverState, RoverStateContext } from './RoverState';
-import { command, createCommand } from './RoverCommand';
+import { createCommand } from './RoverCommand';
 
 export class Rover implements RoverStateContext {
     private roverState: RoverState;
