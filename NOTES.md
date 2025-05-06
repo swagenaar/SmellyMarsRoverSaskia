@@ -19,4 +19,12 @@
 
 ## 🍅 Pomodoro 3
 [] Refactor to Design patterns    
-    [] Fix switch statement, see ideas
+    [X] Introduced state pattern
+    [] Remove switch statement in createRoverState?
+    [] Remove switch statement in go function?
+
+## 🍅 Pomodoro 4
+[] Refactor to Design patterns    
+    [X] Introduced state pattern
+    [] Remove switch statement in createRoverState?
+    [] Remove switch statement in go function?
