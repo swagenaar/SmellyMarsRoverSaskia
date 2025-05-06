@@ -9,7 +9,7 @@
     [X] Remove dead code
 
 ## 🍅 Pomodoro 2
-X] Reduce complexity
+[X] Reduce complexity
     [X] Fix long method
     [X] Deal with cyclomatic complexity
 

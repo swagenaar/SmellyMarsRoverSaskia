@@ -24,36 +24,12 @@ export class Rover {
     public go(commands: command[]): void {
         for (const command of commands) {
             if (command === 'L') {
-                this.turnLeft();
+                this.roverState.turnLeft();
             } else if (command === 'R') {
                 this.roverState.turnRight();
             } else if (command === 'M') {
                 this.roverState.moveForward();
             }
-        }
-    }
-
-    private turnRight() {
-        if (this.roverState.direction === 'E') {
-            this.roverState.direction = 'S';
-        } else if (this.roverState.direction === 'S') {
-            this.roverState.direction = 'W';
-        } else if (this.roverState.direction === 'W') {
-            this.roverState.direction = 'N';
-        } else if (this.roverState.direction === 'N') {
-            this.roverState.direction = 'E';
-        }
-    }
-
-    private turnLeft() {
-        if (this.roverState.direction === 'E') {
-            this.roverState.direction = 'N';
-        } else if (this.roverState.direction === 'N') {
-            this.roverState.direction = 'W';
-        } else if (this.roverState.direction === 'W') {
-            this.roverState.direction = 'S';
-        } else if (this.roverState.direction === 'S') {
-            this.roverState.direction = 'E';
         }
     }
 
