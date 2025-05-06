@@ -1,6 +1,5 @@
 import { createRoverState, Direction, RoverState, RoverStateContext } from './RoverState';
-
-type command = 'L' | 'R' | 'M';
+import { command, createCommand } from './RoverCommand';
 
 export class Rover implements RoverStateContext {
     private roverState: RoverState;
@@ -20,17 +19,8 @@ export class Rover implements RoverStateContext {
 
     public go(commands: command[]): void {
         for (const command of commands) {
-            switch (command) {
-                case 'L':
-                    this.roverState.turnLeft();
-                    break;
-                case 'R':
-                    this.roverState.turnRight();
-                    break;
-                case 'M':
-                    this.roverState.moveForward();
-                    break;
-            }
+            const parsedCommand = createCommand(command);
+            parsedCommand.execute(this.roverState);
         }
     }
 

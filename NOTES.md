@@ -27,4 +27,4 @@
 [] Refactor to Design patterns    
     [X] Introduced state pattern
     [X] Remove switch statement in createRoverState?
-    [] Remove switch statement in go function?
+    [X] Remove switch statement in go function?
