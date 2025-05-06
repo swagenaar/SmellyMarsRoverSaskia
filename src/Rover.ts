@@ -1,5 +1,7 @@
 import { RoverState } from './RoverState';
 
+type command = 'L' | 'R' | 'M';
+
 export class Rover {
     private roverState: RoverState = new RoverState();
 
@@ -19,7 +21,7 @@ export class Rover {
         }
     }
 
-    public go(commands: string): void {
+    public go(commands: command[]): void {
         for (const command of commands) {
             if (command === 'L') {
                 if (this.roverState.direction === 'E') {
