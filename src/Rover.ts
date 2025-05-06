@@ -19,9 +19,9 @@ export class Rover {
         }
     }
 
-    public go(cms: string): void {
-        for (let i = 0; i < cms.length; i++) {
-            const c = cms[i];
+    public go(command: string): void {
+        for (let i = 0; i < command.length; i++) {
+            const c = command[i];
             if (c === 'L') {
                 if (this.roverState.direction === 'E') {
                     this.roverState.direction = 'N';
