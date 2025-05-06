@@ -6,9 +6,13 @@ export class Rover {
     constructor(initialState = '') {
         const splitInitialState = initialState.split(' ');
         if (splitInitialState.length >= 3) {
-            this.roverState.xx = parseInt(splitInitialState[0], 10);
-            this.roverState.yy = parseInt(splitInitialState[1], 10);
-            this.roverState.dd = splitInitialState[2][0];
+            const xPosition = splitInitialState[0];
+            const yPosition = splitInitialState[1];
+            const direction = splitInitialState[2];
+
+            this.roverState.xx = parseInt(xPosition, 10);
+            this.roverState.yy = parseInt(yPosition, 10);
+            this.roverState.dd = direction;
         }
     }
 
