@@ -1,0 +1,46 @@
+{
+  "name": "homepage-bff",
+  "version": "0.1.0",
+  "bin": {
+    "homepage-bff": "cdk/bin/homepage-bff.js"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite-node app.ts",
+    "check": "tsc",
+    "check:watch": "tsc -w",
+    "test": "vitest run",
+    "test:watch": "vitest ",
+    "test:coverage": "vitest run --coverage",
+    "test:ci": "vitest run --silent --coverage",
+    "test:report": "vitest run --outputFile test-results/junit.xml --reporter default --reporter junit",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "reformat": "prettier *.ts --write"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@nsapp/tsconfig": "0.0.5",
+    "@types/node": "^22.7.3",
+    "@vitest/coverage-v8": "^2.0.5",
+    "bats": "^1.11.1",
+    "bats-assert": "github:ztombol/bats-assert",
+    "bats-support": "github:ztombol/bats-support",
+    "commander": "^12.1.0",
+    "constructs": "^10.3.0",
+    "datadog-cdk-constructs-v2": "1.16.1",
+    "dynalite": "^3.2.2",
+    "eslint": "^9.9.0",
+    "express": "^4.21.0",
+    "http-proxy-middleware": "^3.0.2",
+    "inversify": "^6.0.2",
+    "mustache": "^4.2.0",
+    "prettier": "3.3.3",
+    "swagger-ui-express": "^5.0.1",
+    "tsx": "^4.19.0",
+    "typescript": "~5.5.0",
+    "typescript-eslint": "^8.0.1",
+    "vitest": "^2.0.5"
+  },
+  "overrides": {}
+}

@@ -1,0 +1,9 @@
+node_modules
+
+# Test coverage data
+coverage
+test-results
+
+# IDEs
+.idea
+.vscode
