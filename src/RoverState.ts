@@ -2,6 +2,21 @@ import { Rover } from './Rover';
 
 export type Direction = 'N' | 'E' | 'S' | 'W';
 
+export function createRoverState(x: number, y: number, context: Rover, direction: Direction) {
+    switch (direction) {
+        case 'E':
+            return new RoverEastState(x, y, context);
+        case 'S':
+            return new RoverSouthState(x, y, context);
+        case 'W':
+            return new RoverWestState(x, y, context);
+        case 'N':
+            return new RoverNorthState(x, y, context);
+        default:
+            return new RoverNorthState(x, y, context);
+    }
+}
+
 export abstract class RoverState {
     protected direction: Direction = 'N';
 
