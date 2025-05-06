@@ -1,13 +1,13 @@
 export type Direction = 'N' | 'E' | 'S' | 'W';
 
 export class RoverState {
-    constructor(
-        public x = 0,
-        public y = 0,
-        public direction: Direction = 'N',
-    ) {
-        this.x = x;
-        this.y = y;
+    private x = 0;
+    private y = 0;
+    private direction: Direction = 'N';
+
+    constructor(x = '0', y = '0', direction: Direction = 'N') {
+        this.x = parseInt(x, 10);
+        this.y = parseInt(y, 10);
         this.direction = direction;
     }
 

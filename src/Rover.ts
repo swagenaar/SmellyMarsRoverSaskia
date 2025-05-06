@@ -3,22 +3,15 @@ import { Direction, RoverState } from './RoverState';
 type command = 'L' | 'R' | 'M';
 
 export class Rover {
-    private roverState: RoverState = new RoverState();
+    private roverState: RoverState;
 
     constructor(initialState = '') {
-        const defaultPosition = '0';
-        const defaultDirection: Direction = 'N';
-
         const splitInitialState = initialState.split(' ');
-        if (splitInitialState.length >= 3) {
-            const xPosition = splitInitialState[0] ?? defaultPosition;
-            const yPosition = splitInitialState[1] ?? defaultPosition;
-            const direction: Direction = (splitInitialState[2] as Direction) ?? defaultDirection;
+        const xPosition = splitInitialState[0];
+        const yPosition = splitInitialState[1];
+        const direction: Direction = splitInitialState[2] as Direction;
 
-            this.roverState.x = parseInt(xPosition, 10);
-            this.roverState.y = parseInt(yPosition, 10);
-            this.roverState.direction = direction;
-        }
+        this.roverState = new RoverState(xPosition, yPosition, direction);
     }
 
     public go(commands: command[]): void {
