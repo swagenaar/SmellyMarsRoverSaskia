@@ -6,7 +6,7 @@
     [] Fix all type errors
     [] Fix bad naming
     [] Fix Magic strings
-    [] Remove dead code
+    [X] Remove dead code
 [] Reduce complexity
     [] Fix long method
 [] Reorder responsibilities
