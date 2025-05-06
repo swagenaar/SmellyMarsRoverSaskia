@@ -1,4 +1,4 @@
-import { Direction, RoverState } from './RoverState';
+import { Direction, RoverEastState, RoverNorthState, RoverSouthState, RoverState, RoverWestState } from './RoverState';
 
 type command = 'L' | 'R' | 'M';
 
@@ -9,9 +9,28 @@ export class Rover {
         const splitInitialState = initialState.split(' ');
         const xPosition = splitInitialState[0];
         const yPosition = splitInitialState[1];
-        const direction: Direction = splitInitialState[2] as Direction;
+        const direction = splitInitialState[2];
 
-        this.roverState = new RoverState(xPosition, yPosition, direction);
+        switch (direction) {
+            case 'E':
+                this.roverState = new RoverEastState(xPosition, yPosition, this);
+                break;
+            case 'S':
+                this.roverState = new RoverSouthState(xPosition, yPosition, this);
+                break;
+            case 'W':
+                this.roverState = new RoverWestState(xPosition, yPosition, this);
+                break;
+            case 'N':
+                this.roverState = new RoverNorthState(xPosition, yPosition, this);
+                break;
+            default:
+                this.roverState = new RoverNorthState(xPosition, yPosition, this);
+        }
+    }
+
+    public transitionTo(state: RoverState): void {
+        this.roverState = state;
     }
 
     public go(commands: command[]): void {

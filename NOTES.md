@@ -16,3 +16,7 @@
 [X] Reorder responsibilities
     [X] Fix feature envy
     [X] Fix data class
+
+## 🍅 Pomodoro 3
+[] Refactor to Design patterns    
+    [] Fix switch statement, see ideas
