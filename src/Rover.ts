@@ -3,8 +3,8 @@ import { RoverState } from './RoverState';
 export class Rover {
     private roverState: RoverState = new RoverState();
 
-    constructor(p = '') {
-        const s = p.split(' ');
+    constructor(initialState = '') {
+        const s = initialState.split(' ');
         if (s.length >= 3) {
             this.roverState.xx = parseInt(s[0], 10);
             this.roverState.yy = parseInt(s[1], 10);
