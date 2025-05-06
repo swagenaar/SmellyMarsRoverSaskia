@@ -3,18 +3,18 @@ import { Rover } from './Rover';
 export type Direction = 'N' | 'E' | 'S' | 'W';
 
 export function createRoverState(x: number, y: number, context: Rover, direction: Direction) {
-    switch (direction) {
-        case 'E':
-            return new RoverEastState(x, y, context);
-        case 'S':
-            return new RoverSouthState(x, y, context);
-        case 'W':
-            return new RoverWestState(x, y, context);
-        case 'N':
-            return new RoverNorthState(x, y, context);
-        default:
-            return new RoverNorthState(x, y, context);
+    const directionToState: Record<Direction, (x: number, y: number, context: Rover) => RoverState> = {
+        E: (x, y, context) => new RoverEastState(x, y, context),
+        S: (x, y, context) => new RoverSouthState(x, y, context),
+        W: (x, y, context) => new RoverWestState(x, y, context),
+        N: (x, y, context) => new RoverNorthState(x, y, context),
+    };
+
+    if (directionToState[direction]) {
+        return directionToState[direction](x, y, context);
     }
+
+    return new RoverNorthState(x, y, context);
 }
 
 export abstract class RoverState {

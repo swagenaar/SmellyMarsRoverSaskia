@@ -1,13 +1,4 @@
-import {
-    createRoverStae,
-    createRoverState,
-    Direction,
-    RoverEastState,
-    RoverNorthState,
-    RoverSouthState,
-    RoverState,
-    RoverWestState,
-} from './RoverState';
+import { createRoverState, Direction, RoverState } from './RoverState';
 
 type command = 'L' | 'R' | 'M';
 
