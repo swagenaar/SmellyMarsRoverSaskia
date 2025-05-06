@@ -1,8 +1,8 @@
 import { RoverState } from './RoverState';
 
-export type command = 'L' | 'R' | 'M';
+export type Command = 'L' | 'R' | 'M';
 
-export function createCommand(command: command): RoverCommand {
+export function createCommand(command: string): RoverCommand {
     switch (command) {
         case 'L':
             return new TurnLeftCommand();

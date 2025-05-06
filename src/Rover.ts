@@ -17,7 +17,7 @@ export class Rover implements RoverStateContext {
         this.roverState = state;
     }
 
-    public go(commands: command[]): void {
+    public go(commands: string): void {
         for (const command of commands) {
             const parsedCommand = createCommand(command);
             parsedCommand.execute(this.roverState);

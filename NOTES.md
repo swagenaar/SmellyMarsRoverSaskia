@@ -24,7 +24,7 @@
     [] Remove switch statement in go function?
 
 ## 🍅 Pomodoro 4
-[] Refactor to Design patterns    
+[X] Refactor to Design patterns    
     [X] Introduced state pattern
     [X] Remove switch statement in createRoverState?
     [X] Remove switch statement in go function?
