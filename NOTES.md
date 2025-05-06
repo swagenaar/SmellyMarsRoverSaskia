@@ -14,5 +14,5 @@ X] Reduce complexity
     [X] Deal with cyclomatic complexity
 
 [] Reorder responsibilities
-[] Fix feature envy
-[] Fix data class
+    [] Fix feature envy
+    [] Fix data class

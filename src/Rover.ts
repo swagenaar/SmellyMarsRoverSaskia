@@ -28,23 +28,8 @@ export class Rover {
             } else if (command === 'R') {
                 this.turnRight();
             } else if (command === 'M') {
-                this.moveForward();
+                this.roverState.moveForward();
             }
-        }
-    }
-
-    private moveForward() {
-        if (this.roverState.direction === 'E') {
-            this.roverState.x++;
-        }
-        if (this.roverState.direction === 'S') {
-            this.roverState.y--;
-        }
-        if (this.roverState.direction === 'W') {
-            this.roverState.x--;
-        }
-        if (this.roverState.direction === 'N') {
-            this.roverState.y++;
         }
     }
 
