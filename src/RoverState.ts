@@ -2,8 +2,8 @@ import { Rover } from './Rover';
 
 export type Direction = 'N' | 'E' | 'S' | 'W';
 
-export function createRoverState(x: number, y: number, context: Rover, direction: Direction) {
-    const directionToState: Record<Direction, (x: number, y: number, context: Rover) => RoverState> = {
+export function createRoverState(x: number, y: number, context: RoverStateContext, direction: Direction) {
+    const directionToState: Record<Direction, (x: number, y: number, context: RoverStateContext) => RoverState> = {
         E: (x, y, context) => new RoverEastState(x, y, context),
         S: (x, y, context) => new RoverSouthState(x, y, context),
         W: (x, y, context) => new RoverWestState(x, y, context),
@@ -17,13 +17,17 @@ export function createRoverState(x: number, y: number, context: Rover, direction
     return new RoverNorthState(x, y, context);
 }
 
+export interface RoverStateContext {
+    transitionTo(state: RoverState): void;
+}
+
 export abstract class RoverState {
     protected direction: Direction = 'N';
 
     public constructor(
         protected x = 0,
         protected y = 0,
-        protected context: Rover,
+        protected context: RoverStateContext,
     ) {
         this.x = x;
         this.y = y;

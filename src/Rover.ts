@@ -1,8 +1,8 @@
-import { createRoverState, Direction, RoverState } from './RoverState';
+import { createRoverState, Direction, RoverState, RoverStateContext } from './RoverState';
 
 type command = 'L' | 'R' | 'M';
 
-export class Rover {
+export class Rover implements RoverStateContext {
     private roverState: RoverState;
 
     constructor(initialState = '') {
