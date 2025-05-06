@@ -19,4 +19,21 @@ export class RoverState {
             this.y++;
         }
     }
+
+    public turnRight() {
+        switch (this.direction) {
+            case 'E':
+                this.direction = 'S';
+                break;
+            case 'S':
+                this.direction = 'W';
+                break;
+            case 'W':
+                this.direction = 'N';
+                break;
+            case 'N':
+                this.direction = 'E';
+                break;
+        }
+    }
 }

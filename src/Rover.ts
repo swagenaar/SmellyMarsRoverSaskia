@@ -26,7 +26,7 @@ export class Rover {
             if (command === 'L') {
                 this.turnLeft();
             } else if (command === 'R') {
-                this.turnRight();
+                this.roverState.turnRight();
             } else if (command === 'M') {
                 this.roverState.moveForward();
             }
