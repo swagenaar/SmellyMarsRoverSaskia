@@ -7,8 +7,8 @@ export class Rover {
 
     constructor(initialState = '') {
         const splitInitialState = initialState.split(' ');
-        const xPosition = splitInitialState[0];
-        const yPosition = splitInitialState[1];
+        const xPosition = parseInt(splitInitialState[0] ?? '0', 10);
+        const yPosition = parseInt(splitInitialState[1] ?? '0', 10);
         const direction = splitInitialState[2];
 
         switch (direction) {

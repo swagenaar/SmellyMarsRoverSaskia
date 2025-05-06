@@ -3,15 +3,15 @@ import { Rover } from './Rover';
 export type Direction = 'N' | 'E' | 'S' | 'W';
 
 export abstract class RoverState {
-    protected x = 0;
-    protected y = 0;
     protected direction: Direction = 'N';
-    protected context: Rover;
 
-    protected constructor(x = '0', y = '0', direction: Direction = 'N', context: Rover) {
-        this.x = parseInt(x, 10);
-        this.y = parseInt(y, 10);
-        this.direction = direction;
+    public constructor(
+        protected x = 0,
+        protected y = 0,
+        protected context: Rover,
+    ) {
+        this.x = x;
+        this.y = y;
         this.context = context;
     }
 
@@ -27,73 +27,65 @@ export abstract class RoverState {
 }
 
 export class RoverNorthState extends RoverState {
-    constructor(x = '0', y = '0', context: Rover) {
-        super(x, y, 'N', context);
-    }
+    override direction: Direction = 'N';
 
     public override moveForward() {
         this.y++;
     }
 
     public override turnRight() {
-        this.context.transitionTo(new RoverEastState(this.x.toString(), this.y.toString(), this.context));
+        this.context.transitionTo(new RoverEastState(this.x, this.y, this.context));
     }
 
     public override turnLeft() {
-        this.context.transitionTo(new RoverWestState(this.x.toString(), this.y.toString(), this.context));
+        this.context.transitionTo(new RoverWestState(this.x, this.y, this.context));
     }
 }
 
 export class RoverEastState extends RoverState {
-    constructor(x = '0', y = '0', context: Rover) {
-        super(x, y, 'E', context);
-    }
+    override direction: Direction = 'E';
 
     public override moveForward() {
         this.x++;
     }
 
     public override turnRight() {
-        this.context.transitionTo(new RoverSouthState(this.x.toString(), this.y.toString(), this.context));
+        this.context.transitionTo(new RoverSouthState(this.x, this.y, this.context));
     }
 
     public override turnLeft() {
-        this.context.transitionTo(new RoverNorthState(this.x.toString(), this.y.toString(), this.context));
+        this.context.transitionTo(new RoverNorthState(this.x, this.y, this.context));
     }
 }
 
 export class RoverSouthState extends RoverState {
-    constructor(x = '0', y = '0', context: Rover) {
-        super(x, y, 'S', context);
-    }
+    override direction: Direction = 'S';
 
     public override moveForward() {
         this.y--;
     }
 
     public override turnRight() {
-        this.context.transitionTo(new RoverWestState(this.x.toString(), this.y.toString(), this.context));
+        this.context.transitionTo(new RoverWestState(this.x, this.y, this.context));
     }
 
     public override turnLeft() {
-        this.context.transitionTo(new RoverEastState(this.x.toString(), this.y.toString(), this.context));
+        this.context.transitionTo(new RoverEastState(this.x, this.y, this.context));
     }
 }
 
 export class RoverWestState extends RoverState {
-    constructor(x = '0', y = '0', context: Rover) {
-        super(x, y, 'W', context);
-    }
+    override direction: Direction = 'W';
 
     public override moveForward() {
         this.x--;
     }
 
     public override turnRight() {
-        this.context.transitionTo(new RoverNorthState(this.x.toString(), this.y.toString(), this.context));
+        this.context.transitionTo(new RoverNorthState(this.x, this.y, this.context));
     }
 
     public override turnLeft() {
-        this.context.transitionTo(new RoverSouthState(this.x.toString(), this.y.toString(), this.context));
+        this.context.transitionTo(new RoverSouthState(this.x, this.y, this.context));
     }
 }
