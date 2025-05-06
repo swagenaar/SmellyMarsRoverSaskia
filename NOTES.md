@@ -7,3 +7,8 @@
     [X] Fix bad naming
     [X] Fix Magic strings
     [X] Remove dead code
+
+## 🍅 Pomodoro 2
+[] Reduce complexity
+    [] Fix long method
+    [] Deal with cyclomatic complexity

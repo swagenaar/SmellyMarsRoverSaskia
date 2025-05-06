@@ -24,39 +24,51 @@ export class Rover {
     public go(commands: command[]): void {
         for (const command of commands) {
             if (command === 'L') {
-                if (this.roverState.direction === 'E') {
-                    this.roverState.direction = 'N';
-                } else if (this.roverState.direction === 'N') {
-                    this.roverState.direction = 'W';
-                } else if (this.roverState.direction === 'W') {
-                    this.roverState.direction = 'S';
-                } else if (this.roverState.direction === 'S') {
-                    this.roverState.direction = 'E';
-                }
+                this.turnLeft();
             } else if (command === 'R') {
-                if (this.roverState.direction === 'E') {
-                    this.roverState.direction = 'S';
-                } else if (this.roverState.direction === 'S') {
-                    this.roverState.direction = 'W';
-                } else if (this.roverState.direction === 'W') {
-                    this.roverState.direction = 'N';
-                } else if (this.roverState.direction === 'N') {
-                    this.roverState.direction = 'E';
-                }
+                this.turnRight();
             } else if (command === 'M') {
-                if (this.roverState.direction === 'E') {
-                    this.roverState.x++;
-                }
-                if (this.roverState.direction === 'S') {
-                    this.roverState.y--;
-                }
-                if (this.roverState.direction === 'W') {
-                    this.roverState.x--;
-                }
-                if (this.roverState.direction === 'N') {
-                    this.roverState.y++;
-                }
+                this.moveForward();
             }
+        }
+    }
+
+    private moveForward() {
+        if (this.roverState.direction === 'E') {
+            this.roverState.x++;
+        }
+        if (this.roverState.direction === 'S') {
+            this.roverState.y--;
+        }
+        if (this.roverState.direction === 'W') {
+            this.roverState.x--;
+        }
+        if (this.roverState.direction === 'N') {
+            this.roverState.y++;
+        }
+    }
+
+    private turnRight() {
+        if (this.roverState.direction === 'E') {
+            this.roverState.direction = 'S';
+        } else if (this.roverState.direction === 'S') {
+            this.roverState.direction = 'W';
+        } else if (this.roverState.direction === 'W') {
+            this.roverState.direction = 'N';
+        } else if (this.roverState.direction === 'N') {
+            this.roverState.direction = 'E';
+        }
+    }
+
+    private turnLeft() {
+        if (this.roverState.direction === 'E') {
+            this.roverState.direction = 'N';
+        } else if (this.roverState.direction === 'N') {
+            this.roverState.direction = 'W';
+        } else if (this.roverState.direction === 'W') {
+            this.roverState.direction = 'S';
+        } else if (this.roverState.direction === 'S') {
+            this.roverState.direction = 'E';
         }
     }
 
