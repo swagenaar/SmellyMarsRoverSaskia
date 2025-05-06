@@ -1,20 +1,14 @@
-import { Rover } from './Rover';
-
 export type Direction = 'N' | 'E' | 'S' | 'W';
 
 export function createRoverState(x: number, y: number, context: RoverStateContext, direction: Direction) {
-    const directionToState: Record<Direction, (x: number, y: number, context: RoverStateContext) => RoverState> = {
-        E: (x, y, context) => new RoverEastState(x, y, context),
-        S: (x, y, context) => new RoverSouthState(x, y, context),
-        W: (x, y, context) => new RoverWestState(x, y, context),
-        N: (x, y, context) => new RoverNorthState(x, y, context),
+    const directionToStateMap: Record<Direction, RoverState> = {
+        E: new RoverEastState(x, y, context),
+        S: new RoverSouthState(x, y, context),
+        W: new RoverWestState(x, y, context),
+        N: new RoverNorthState(x, y, context),
     };
 
-    if (directionToState[direction]) {
-        return directionToState[direction](x, y, context);
-    }
-
-    return new RoverNorthState(x, y, context);
+    return directionToStateMap[direction] ?? new RoverNorthState(x, y, context);
 }
 
 export interface RoverStateContext {
