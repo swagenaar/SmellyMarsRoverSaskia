@@ -9,6 +9,10 @@
     [X] Remove dead code
 
 ## 🍅 Pomodoro 2
-[] Reduce complexity
-    [] Fix long method
-    [] Deal with cyclomatic complexity
+X] Reduce complexity
+    [X] Fix long method
+    [X] Deal with cyclomatic complexity
+
+[] Reorder responsibilities
+[] Fix feature envy
+[] Fix data class

@@ -7,8 +7,8 @@
     [X] Fix bad naming
     [X] Fix Magic strings
     [X] Remove dead code
-[] Reduce complexity
-    [] Fix long method
+[X] Reduce complexity
+    [X] Fix long method
 [] Reorder responsibilities
     [] Fix feature envy 
     [] Fix data class
